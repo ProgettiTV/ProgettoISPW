@@ -15,17 +15,17 @@ public class Ssd extends  Decorator{
         this.component=component;
 
     }
-
-    @Override
-    void getConfigurazione(List<String> list){
-        super.getConfigurazione(list);
-        list.add(risultatoRicerca);
-    }
     @Override
     void getCaratteristica(List<String> caratteristica){
         super.getCaratteristica(caratteristica);
         caratteristica.add(risultatoCaratteristica);
     }
+    @Override
+    void getConfigurazione(List<String> list){
+        super.getConfigurazione(list);
+        list.add(risultatoRicerca);
+    }
+
 
 
     public void cercaSsd(){

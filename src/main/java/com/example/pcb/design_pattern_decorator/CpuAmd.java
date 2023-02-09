@@ -38,8 +38,8 @@ public class CpuAmd extends Decorator{
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException a) {
+            throw new RuntimeException(a);
         }
         this.risultatoRicerca= daoRicercaCpu.returnComponenteCpuAmd();
         this.risultatoCaratteristica=daoRicercaCpu.returnCaratteristicaCpuAmd();

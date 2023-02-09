@@ -48,7 +48,7 @@ public  class DomandeUtente {
     public void prendC(BeanConferma c) {
          Boolean confermatoRisposte= c.returnBool();
 
-        if(confermatoRisposte){
+        if(confermatoRisposte!=false){
 
 
             DaoBudget daoBudget=new DaoBudget(budgetProvissorio);

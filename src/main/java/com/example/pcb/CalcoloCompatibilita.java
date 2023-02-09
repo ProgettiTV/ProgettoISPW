@@ -10,38 +10,48 @@ public class CalcoloCompatibilita {
     public CalcoloCompatibilita(List<String> caratteristica) {
         this.listaCompatibilita=caratteristica;
     }
-    public int CalcoloPercentualeCompatibilita(){
+    public int calcoloPercentualeCompatibilita(){
+        String cpu=listaCompatibilita.get(1) ;
+        String schedaMadre=listaCompatibilita.get(8);
+        String raffredamento=listaCompatibilita.get(6);
+        String Ssd=listaCompatibilita.get(4);
+        String Ram=listaCompatibilita.get(2);
+        String Case=listaCompatibilita.get(7);
+        String Alimentatore=listaCompatibilita.get(9);
+        String SchedaVideo=listaCompatibilita.get(3);
+        String Monitor=listaCompatibilita.get(5);
 
 
-        if( ( (listaCompatibilita.get(1)!=null) ) && ( (listaCompatibilita.get(8)!=null) ) ){
-            if(((Integer.parseInt(listaCompatibilita.get(8))-2 )<= (Integer.parseInt(listaCompatibilita.get(1)) ) ) && ( (Integer.parseInt(listaCompatibilita.get(1)) )<= (Integer.parseInt(listaCompatibilita.get(8))+2)) ) {
+
+        if( cpu!=null  && schedaMadre!=null ){
+            if(((Integer.parseInt(schedaMadre)-2 )<= (Integer.parseInt(cpu) ) ) && ( (Integer.parseInt(cpu) )<= (Integer.parseInt(schedaMadre)+2)) ) {
                 percentualeCompatibilita += 20;
             }
 
         }
-        else if(( (listaCompatibilita.get(1)!=null) ) && (  (listaCompatibilita.get(6)!=null) )){
+        if( cpu!=null && raffredamento!=null ){
 
 
-             if ( (Integer.parseInt(listaCompatibilita.get(6))-2 )<= (Integer.parseInt(listaCompatibilita.get(1)) ) && (Integer.parseInt(listaCompatibilita.get(1)) )<= (Integer.parseInt(listaCompatibilita.get(6))+2) && ( !(listaCompatibilita.get(1)).equals("null") ) && ( !(listaCompatibilita.get(6)).equals("null") ) ) {
+             if ( (Integer.parseInt(raffredamento)-2 )<= (Integer.parseInt(cpu) ) && (Integer.parseInt(cpu) )<= (Integer.parseInt(raffredamento)+2) &&  !cpu.equals("null")  && raffredamento.equals("null") ) {
                  percentualeCompatibilita += 20;
              }
 
         }
-        else if ( ( (listaCompatibilita.get(4)!=null) ) && (  (listaCompatibilita.get(2)!=null) )){
-                if((Integer.parseInt(listaCompatibilita.get(4)) ) > (10 * ( (Integer.parseInt(listaCompatibilita.get(2)) ) ) )) {
+        if (  Ssd!=null && Ram!=null){
+                if( Integer.parseInt(Ssd)  > 10 * ( Integer.parseInt(Ram) ) ) {
                     percentualeCompatibilita += 20;
                 }
 
         }
-        else if ( ( (listaCompatibilita.get(7)!=null) ) && (  (listaCompatibilita.get(9)!=null) ) ){
-                if((listaCompatibilita.get(7)).equals(listaCompatibilita.get(9))) {
+        if (  Case !=null  && Alimentatore !=null ){
+                if(Case.equals(Alimentatore) ){
                     percentualeCompatibilita += 20;
                 }
 
         }
-        else if (  ( (listaCompatibilita.get(3)!=null) ) && (  (listaCompatibilita.get(5)!=null) ) ){
+        if ( SchedaVideo!=null &&  Monitor!=null){
 
-                if((listaCompatibilita.get(3)).equals(listaCompatibilita.get(5) ) ) {
+                if(SchedaVideo.equals(Monitor)) {
                     percentualeCompatibilita += 20;
                 }
 

@@ -91,7 +91,7 @@ public class RicercaComponenti {
         this.component.getCaratteristica(caratteristica);
 
         CalcoloCompatibilita calcoloCompatibilita=new CalcoloCompatibilita(caratteristica);
-        int percentualeCompatibilita=calcoloCompatibilita.CalcoloPercentualeCompatibilita();
+        int percentualeCompatibilita=calcoloCompatibilita.calcoloPercentualeCompatibilita();
 
         BeanStampaConfigurazione beanStampaConfigurazione=new BeanStampaConfigurazione(configurazioneFinale);
         BeanStampaCompatibilita beanStampaCompatibilita= new BeanStampaCompatibilita(percentualeCompatibilita);

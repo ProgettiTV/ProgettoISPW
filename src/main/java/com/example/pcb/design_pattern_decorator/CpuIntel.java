@@ -16,17 +16,17 @@ public class CpuIntel extends Decorator{
         this.component=component;
 
     }
-
-    @Override
-    void getConfigurazione(List<String> list){
-        super.getConfigurazione(list);
-        list.add(risultatoRicerca);
-    }
     @Override
     void getCaratteristica(List<String> caratteristica){
         super.getCaratteristica(caratteristica);
         caratteristica.add(risultatoCaratteristica);
     }
+    @Override
+    void getConfigurazione(List<String> list){
+        super.getConfigurazione(list);
+        list.add(risultatoRicerca);
+    }
+
 
     public void cercaCpuIntel(){
 
@@ -36,11 +36,13 @@ public class CpuIntel extends Decorator{
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException a) {
+            throw new RuntimeException(a);
         }
         this.risultatoRicerca= daoRicercaCpu.returnComponenteCpuIntel();
         this.risultatoCaratteristica=daoRicercaCpu.returnCaratteristicaCpuIntel();
 
     }
+
+
 }
