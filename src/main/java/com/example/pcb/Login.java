@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -101,12 +100,9 @@ public class Login {
             Scanner scannerDaFile;
             try {
                 scannerDaFile = new Scanner(inputFile);
-                datiPresenti[0] = "";
-                datiPresenti[1] = "";
-                datiPresenti[2] = "";
+
                 int i = 0;
 
-                //while( scannerDaFile.hasNextLine() && (!Objects.equals(scannerDaFile.hasNextLine(), "User") || !Objects.equals(scannerDaFile.hasNextLine(), "Admin")) ){
                 while (scannerDaFile.hasNextLine() && !((datiInseriti[0]).equals(datiPresenti[0]) && (datiInseriti[1]).equals(datiPresenti[1]))) {
                     if (i == 3) {
                         i = 0;
