@@ -35,6 +35,7 @@ public class DaoBudget extends AbstractSubject {
     }
     public void setValoreRicercaBudget(int valore){
         this.valoreRicercaBudget = valore;
+
     }
 
     public void setNuovoValoreBudget(String valore){
@@ -91,6 +92,7 @@ public class DaoBudget extends AbstractSubject {
 
     public void cercaBudget() throws SQLException {
 
+
         String showBudgetQuery = "SELECT Valore FROM parametri_budget WHERE idparametri_budget = " + valoreRicercaBudget;
 
         Statement statement = connection.createStatement();
@@ -104,7 +106,6 @@ public class DaoBudget extends AbstractSubject {
     }
 
     public void aggiornaBudget() throws SQLException {
-
 
 
         String updateBudgetQuery = "UPDATE parametri_budget SET Valore = '" + valoreNuovoBudget + "' WHERE idparametri_budget = " + valoreRicercaBudget;
