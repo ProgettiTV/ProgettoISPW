@@ -18,9 +18,6 @@ public  class DomandeUtente {
     private int budget;
     private String[] listaCaratteristicheUtilizzo= new String[9];
     private BeanMostraResoconto mostraResoconto;
-
-
-
     private int budgetProvissorio;
     private String utilizzoProvissorio;
 
@@ -31,24 +28,24 @@ public  class DomandeUtente {
         //costruttore
     }
 
-    public void prendB(BeanBudget b){
+    public void prendiBudget(BeanBudget beanBudget){
 
-        this.budgetProvissorio =b.returnID();
-
-    }
-    public void prendU(BeanUtilizzo u){
-
-        this.utilizzoProvissorio =u.returnStr();
+        this.budgetProvissorio = beanBudget.returnID();
 
     }
+    public void prendiUtilizzo(BeanUtilizzo beanUtilizzo){
 
-    public void getMostraResoconto(BeanMostraResoconto mR) {
-        this.mostraResoconto=mR;
+        this.utilizzoProvissorio =beanUtilizzo.returnStr();
+
+    }
+
+    public void prendiMostraResoconto(BeanMostraResoconto mostraResoconto) {
+        this.mostraResoconto= mostraResoconto;
         invioResoconto();
     }
 
-    public void prendC(BeanConferma c) throws QueryException, SQLException{
-         Boolean confermatoRisposte= c.returnBool();
+    public void prendiConferma(BeanConferma beanConferma) throws QueryException, SQLException{
+         Boolean confermatoRisposte= beanConferma.returnBool();
 
         if(Boolean.TRUE.equals(confermatoRisposte)){
 
@@ -92,8 +89,8 @@ public  class DomandeUtente {
 
     public void invioResoconto(){
 
-        mostraResoconto.getmostraB(budgetProvissorio);
-        mostraResoconto.getmostraU(utilizzoProvissorio);
+        mostraResoconto.getmostraBudget(budgetProvissorio);
+        mostraResoconto.getmostraUtilizzo(utilizzoProvissorio);
 
     }
 

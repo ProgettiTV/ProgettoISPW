@@ -1,30 +1,30 @@
 package com.example.pcb.bean_class;
 
 public class BeanMostraResoconto {
-    private String mostraB;
-    private String mostraU;
+    private String mostraBudegt;
+    private String mostraUtilizzo;
     public BeanMostraResoconto() {
         //costruttore
     }
 
-    public void getmostraB(int b1){
-        this.mostraB="";
+    public void getmostraBudget(int b1){
+        this.mostraBudegt ="";
         for(int i=0;i< b1;i++){
-            this.mostraB= mostraB + "€";
+            this.mostraBudegt = mostraBudegt + "€";
         }
 
     }
 
 
-    public void getmostraU(String u1){
-        this.mostraU=u1;
+    public void getmostraUtilizzo(String u1){
+        this.mostraUtilizzo =u1;
 
     }
     public String returnStampaB(){
-        return mostraB;
+        return mostraBudegt;
     }
     public String returnStampaU(){
-        return mostraU;
+        return mostraUtilizzo;
     }
 
 }

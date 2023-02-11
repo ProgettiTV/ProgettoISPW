@@ -69,7 +69,7 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
         if (Objects.equals(risposta, "Conferma")){
 
             try {
-                riferimentoCapplicativo.prendC(beanConferma);
+                riferimentoCapplicativo.prendiConferma(beanConferma);
             } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.NONE);
                 alert.setTitle(errore);
@@ -110,7 +110,7 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
 
         this.mostraResoconto=new BeanMostraResoconto();
 
-        riferimentoCapplicativo.getMostraResoconto(mostraResoconto);
+        riferimentoCapplicativo.prendiMostraResoconto(mostraResoconto);
         stampa(mostraResoconto);
 
     }

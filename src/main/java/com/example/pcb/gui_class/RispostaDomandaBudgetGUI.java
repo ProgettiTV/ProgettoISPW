@@ -40,7 +40,7 @@ public class RispostaDomandaBudgetGUI extends SwitchClassGUI{
         String risposta = ((Button)ae.getSource()).getText();
         BeanBudget b = new BeanBudget(risposta);
         domandeUtente= new DomandeUtente();
-        domandeUtente.prendB(b);
+        domandeUtente.prendiBudget(b);
         switchToUtilizzo(ae);
     }
 
