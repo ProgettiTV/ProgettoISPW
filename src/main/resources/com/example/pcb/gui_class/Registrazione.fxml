@@ -16,19 +16,19 @@
             <Image url="@6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="376.0" fitWidth="395.0" layoutX="548.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="376.0" fitWidth="395.0" layoutX="484.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@9043073_rhombus_icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="270.0" fitWidth="218.0" layoutX="627.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="270.0" fitWidth="218.0" layoutX="563.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@309041_users_group_people_icon.png" />
          </image>
       </ImageView>
       <Button layoutX="1053.0" layoutY="625.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="173.0" text="Accedi con Google" />
-      <Button layoutX="688.0" layoutY="671.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="35.0" prefWidth="136.0" text="Registrati" />
-      <TextField fx:id="usernameTextField" layoutX="653.0" layoutY="530.0" prefHeight="47.0" prefWidth="206.0" promptText="Username" />
+      <Button layoutX="604.0" layoutY="660.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="35.0" prefWidth="136.0" text="Registrati" />
+      <TextField fx:id="usernameTextField" layoutX="569.0" layoutY="519.0" prefHeight="47.0" prefWidth="206.0" promptText="Username" />
       <Button layoutX="40.0" layoutY="530.0" mnemonicParsing="false" onAction="#switchToEntry" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -48,18 +48,18 @@
             <Image url="@Logo.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="54.0" fitWidth="48.0" layoutX="603.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="54.0" fitWidth="48.0" layoutX="519.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@5340287_man_people_person_user_users_icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="48.0" fitWidth="68.0" layoutX="603.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="68.0" layoutX="519.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@3643767_key_keys_main_password_privilege_icon.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="passwordPasswordField" layoutX="653.0" layoutY="589.0" prefHeight="47.0" prefWidth="206.0" promptText="Password" />
-      <TextField fx:id="lastnameTextField" layoutX="653.0" layoutY="471.0" prefHeight="47.0" prefWidth="206.0" promptText="Cognome" />
-      <TextField fx:id="firstnameTextField" layoutX="653.0" layoutY="411.0" prefHeight="47.0" prefWidth="206.0" promptText="Nome" />
+      <PasswordField fx:id="passwordPasswordField" layoutX="569.0" layoutY="578.0" prefHeight="47.0" prefWidth="206.0" promptText="Password" />
+      <TextField fx:id="lastnameTextField" layoutX="569.0" layoutY="460.0" prefHeight="47.0" prefWidth="206.0" promptText="Cognome" />
+      <TextField fx:id="firstnameTextField" layoutX="569.0" layoutY="400.0" prefHeight="47.0" prefWidth="206.0" promptText="Nome" />
    </children>
 </AnchorPane>
