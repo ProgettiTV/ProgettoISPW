@@ -56,8 +56,8 @@ public class AdminBudgetGUI extends SwitchClassGUI{
         beanSelezionaBudget.traduciB(selezioneB);
 
         ModificaParametri modificaParametri= new ModificaParametri();
-        modificaParametri.prendiRiferimentoBean(beanSelezionaBudget);
-        modificaParametri.prendiBeanRiferimentoInviaVecchio(inserisciBudgetGUI);
+        modificaParametri.prendiRiferimentoBeanBudget(beanSelezionaBudget);
+        modificaParametri.prendiBeanRiferimentoInviaVecchioBudget(inserisciBudgetGUI);
 
         inserisciBudgetGUI.prendiRiferimentoCAB(modificaParametri);
 
