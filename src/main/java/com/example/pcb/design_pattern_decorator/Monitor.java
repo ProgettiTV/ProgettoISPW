@@ -1,6 +1,7 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaMonitor;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -29,18 +30,16 @@ public class Monitor extends Decorator{
     }
 
     public void cercaMonitor() throws SQLException, IOException {
-        DaoRicercaMonitor daoRicercaMonitor= new DaoRicercaMonitor(this.budgetPerMonitor);
-
-
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerMonitor,"monitor");
         try {
-            daoRicercaMonitor.cercaValore();
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaMonitor.returnComponenteMonitor();
-        this.risultatoCaratteristica=daoRicercaMonitor.returnCaratteristicaMonitor();
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
 }

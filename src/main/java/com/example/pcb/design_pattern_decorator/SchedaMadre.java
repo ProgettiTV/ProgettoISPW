@@ -1,6 +1,6 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaSchedaMadre;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -26,19 +26,17 @@ public class SchedaMadre extends Decorator{
     }
 
     public void cercaSchedaMadre () throws IOException, SQLException {
-        DaoRicercaSchedaMadre daoRicercaSchedaMadre= new DaoRicercaSchedaMadre(this.budgetPerSchedaMadre);
-
-
-        try {
-            daoRicercaSchedaMadre.cercaValore();
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerSchedaMadre,"SchedaMadre");
+        try{
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaSchedaMadre.returnComponenteSchedaMadre();
-        this.risultatoCaratteristica=daoRicercaSchedaMadre.returnCaratteristicaSchedaMadre();
-
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
+
 }

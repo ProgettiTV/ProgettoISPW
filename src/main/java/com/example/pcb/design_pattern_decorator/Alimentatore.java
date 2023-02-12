@@ -1,6 +1,6 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaAlimentatore;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,16 +28,16 @@ public class Alimentatore extends  Decorator{
     }
 
     public void cercaAlimentatore() throws SQLException, IOException {
-        DaoRicercaAlimentatore daoRicercaAlimentatore= new DaoRicercaAlimentatore(this.budgetPerAlimentatore);
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerAlimentatore,"alimentatore");
         try {
-            daoRicercaAlimentatore.cercaValore();
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaAlimentatore.returnComponenteAlimentatore();
-        this.risultatoCaratteristica=daoRicercaAlimentatore.returnCaratteristicaAlimentatore();
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
 }

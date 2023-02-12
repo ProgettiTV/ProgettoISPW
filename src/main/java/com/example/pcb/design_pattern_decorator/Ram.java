@@ -2,7 +2,7 @@ package com.example.pcb.design_pattern_decorator;
 
 
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaRam;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -31,20 +31,17 @@ public class Ram extends Decorator{
     }
 
     public void cercaRam() throws SQLException, IOException {
-
-        DaoRicercaRam daoRicercaRam= new DaoRicercaRam(this.budgetPerRam);
-
-
-
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerRam,"ram");
         try {
-            daoRicercaRam.cercaValore();
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaRam.returnComponenteRam();
-        this.risultatoCaratteristica=daoRicercaRam.returnCaratteristicaRam();
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
+
 }

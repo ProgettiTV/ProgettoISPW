@@ -1,17 +1,18 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaRaffredamentoAria;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class RaffredamentoAria extends Decorator{
-    private final int budgetPerRaffredamentoAcqua;
+    private final int budgetPerRaffredamentoAria;
     private String risultatoRicerca;
     private String risultatoCaratteristica;
     public RaffredamentoAria(Component component, int budget) {
-        this.budgetPerRaffredamentoAcqua = budget;
+        this.budgetPerRaffredamentoAria = budget;
         this.component=component;
 
     }
@@ -28,20 +29,17 @@ public class RaffredamentoAria extends Decorator{
     }
 
     public void cercaRaffredamentoAria() throws IOException, SQLException {
-        DaoRicercaRaffredamentoAria daoRicercaRaffredamentoAria = new DaoRicercaRaffredamentoAria(this.budgetPerRaffredamentoAcqua);
-
-
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerRaffredamentoAria,"raffredamentoAria");
         try {
-            daoRicercaRaffredamentoAria.cercaValore();
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaRaffredamentoAria.returnComponenteRaffredamentoAria();
-        this.risultatoCaratteristica= daoRicercaRaffredamentoAria.returnCaratteristicaRaffredamentoAria();
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
-
 
 }

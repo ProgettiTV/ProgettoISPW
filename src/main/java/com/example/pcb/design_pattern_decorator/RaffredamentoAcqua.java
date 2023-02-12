@@ -1,6 +1,6 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaRaffredamentoAcqua;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,20 +28,17 @@ public class RaffredamentoAcqua extends  Decorator{
     }
 
     public void cercaRaffredamentoAcqua() throws IOException, SQLException {
-        DaoRicercaRaffredamentoAcqua daoRicercaRaffredamentoAcqua = new DaoRicercaRaffredamentoAcqua(this.budgetPerRaffredamentoAcqua);
-
-
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerRaffredamentoAcqua,"raffredamentoAcqua");
         try {
-            daoRicercaRaffredamentoAcqua.cercaValore();
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaRaffredamentoAcqua.returnComponenteRaffredamentoAcqua();
-        this.risultatoCaratteristica= daoRicercaRaffredamentoAcqua.returnCaratteristicaRaffredamentoAcqua();
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
-
 
 }

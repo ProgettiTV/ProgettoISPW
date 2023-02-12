@@ -1,6 +1,6 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaCase;
+import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoGeneral;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,18 +28,16 @@ public class Case extends Decorator{
     }
 
     public void cercaCase() throws SQLException, IOException {
-        DaoRicercaCase daoRicercaCase= new DaoRicercaCase(this.budgetPerCase);
-
-
+        DaoGeneral daoGeneral= new DaoGeneral(this.budgetPerCase,"case");
         try {
-            daoRicercaCase.cercaValore();
+            daoGeneral.cercaValore();
         } catch (SQLException e) {
             throw new SQLException(e);
         } catch (IOException e) {
             throw new IOException(e);
         }
-        this.risultatoRicerca= daoRicercaCase.returnComponenteCase();
-        this.risultatoCaratteristica=daoRicercaCase.returnCaratteristiCase();
+        this.risultatoRicerca= daoGeneral.returnComponente();
+        this.risultatoCaratteristica=daoGeneral.returnCaratteristica();
 
     }
 
