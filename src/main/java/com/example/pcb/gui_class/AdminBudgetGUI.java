@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class AdminBudgetGUI extends SwitchClassGUI{
 
-   private Stage stage;
+    private Stage stage;
     private Scene scene;
 
     private final InserisciBudgetGUI inserisciBudgetGUI;
