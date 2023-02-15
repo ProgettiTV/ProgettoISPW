@@ -19,7 +19,7 @@ public class DBConnection {
 
     public static Connection getDBConnection() throws IOException{
         Properties prop = new Properties();
-        prop.load(new FileInputStream("C:\\Users\\justo\\Desktop\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\credenzialiDB"));
+        prop.load(new FileInputStream("C:\\Users\\justo\\Desktop\\pesame\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\credenzialiDB"));
         String databaseUser = prop.getProperty("databaseUser");
         String databasePassword = prop.getProperty("databasePassword");
         String url = prop.getProperty("url");
@@ -38,7 +38,7 @@ public class DBConnection {
     public String getFilePath() throws IOException{
 
         Properties prop1 = new Properties();
-        prop1.load(new FileInputStream("C:\\Users\\justo\\Desktop\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\filePath"));
+        prop1.load(new FileInputStream("C:\\Users\\justo\\Desktop\\pesame\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\filePath"));
         return prop1.getProperty("path");
 
     }

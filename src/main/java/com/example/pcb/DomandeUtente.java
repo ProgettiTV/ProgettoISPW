@@ -16,6 +16,7 @@ import java.sql.SQLException;
 
 public  class DomandeUtente {
     private int budget;
+    public int a;
     private String[] listaCaratteristicheUtilizzo= new String[9];
     private BeanMostraResoconto mostraResoconto;
     private int budgetProvissorio;
